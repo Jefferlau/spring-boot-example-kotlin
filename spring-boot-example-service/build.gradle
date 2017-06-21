@@ -5,18 +5,17 @@ dependencies {
     testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: "${springBootVersion}") {
         exclude(module: 'commons-logging')
     }
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion"
 }
 
 buildscript {
-    ext.kotlin_version = '1.1.2-5'
     repositories {
         mavenLocal()
         jcenter()
         maven { url "http://repo.spring.io/libs-snapshot" }
     }
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     }
 }
 

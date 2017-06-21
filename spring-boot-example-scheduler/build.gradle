@@ -27,7 +27,8 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '1.5.3.RELEASE'
     testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '1.5.3.RELEASE') {
         exclude(module: 'commons-logging')
-    }compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+    }
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlinVersion"
 }
 
 apply plugin: 'eclipse'
