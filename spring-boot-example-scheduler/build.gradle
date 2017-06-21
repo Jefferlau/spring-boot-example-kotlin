@@ -1,0 +1,40 @@
+description = 'Spring Boot examples Scheduler'
+
+buildscript {
+    ext {
+        kotlinVersion = '1.1.2-5'
+        springBootVersion = '1.5.4.RELEASE'
+        mysqlVersion = '5.1.42'
+        druidVersion = '1.0.31'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+        classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
+    }
+}
+
+dependencies {
+    compile project(':spring-boot-example-service')
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.5.3.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '1.5.3.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-remote-shell', version: '1.5.3.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '1.5.3.RELEASE'
+    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '1.5.3.RELEASE') {
+        exclude(module: 'commons-logging')
+    }
+}
+
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+bootRepackage {
+    mainClass = 'com.jusfoun.Starter'
+    executable = true
+}

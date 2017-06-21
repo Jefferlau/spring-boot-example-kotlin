@@ -1,0 +1,15 @@
+description = 'Spring Boot examples core'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile(group: 'org.springframework.boot', name: 'spring-boot-starter', version: '1.5.3.RELEASE') {
+        exclude(module: 'commons-logging')
+    }
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '1.5.3.RELEASE'
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.5'
+    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '1.5.3.RELEASE') {
+        exclude(module: 'commons-logging')
+    }
+}

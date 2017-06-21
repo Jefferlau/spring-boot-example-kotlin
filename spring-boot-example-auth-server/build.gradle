@@ -1,0 +1,20 @@
+description = 'Spring Boot examples OAuth Server'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile project(':spring-boot-example-service')
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.5.3.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '1.5.3.RELEASE'
+    compile group: 'org.springframework.security.oauth', name: 'spring-security-oauth2', version: '2.0.13.RELEASE'
+    compile group: 'org.hibernate', name: 'hibernate-validator', version: '5.3.5.Final'
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.6.1'
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.6.1'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '1.5.3.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-remote-shell', version: '1.5.3.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '1.5.3.RELEASE'
+    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '1.5.3.RELEASE') {
+        exclude(module: 'commons-logging')
+    }
+}

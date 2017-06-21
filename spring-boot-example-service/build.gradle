@@ -1,0 +1,12 @@
+
+description = 'Spring Boot examples service'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+  compile project(':spring-boot-example-dao')
+    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'1.5.3.RELEASE') {
+exclude(module: 'commons-logging')
+    }
+}
