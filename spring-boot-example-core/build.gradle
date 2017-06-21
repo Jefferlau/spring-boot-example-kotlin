@@ -1,15 +1,31 @@
 description = 'Spring Boot examples core'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
 dependencies {
-    compile(group: 'org.springframework.boot', name: 'spring-boot-starter', version: '1.5.3.RELEASE') {
+    compile(group: 'org.springframework.boot', name: 'spring-boot-starter', version: "${springBootVersion}") {
         exclude(module: 'commons-logging')
     }
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: '1.5.3.RELEASE'
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-mail', version: "${springBootVersion}"
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.5'
-    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '1.5.3.RELEASE') {
+    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: "${springBootVersion}") {
         exclude(module: 'commons-logging')
     }
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+}
+
+buildscript {
+    ext.kotlin_version = '1.1.2-5'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'kotlin'
+
+repositories {
+    mavenLocal()
+    jcenter()
+    maven { url "http://repo.spring.io/libs-snapshot" }
 }

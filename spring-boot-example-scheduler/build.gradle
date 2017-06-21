@@ -8,7 +8,9 @@ buildscript {
         druidVersion = '1.0.31'
     }
     repositories {
-        mavenCentral()
+        mavenLocal()
+        jcenter()
+        maven { url "http://repo.spring.io/libs-snapshot" }
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -25,16 +27,19 @@ dependencies {
     compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '1.5.3.RELEASE'
     testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '1.5.3.RELEASE') {
         exclude(module: 'commons-logging')
-    }
+    }compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
 }
 
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
 bootRepackage {
     mainClass = 'com.jusfoun.Starter'
     executable = true
+}
+
+repositories {
+    mavenLocal()
+    jcenter()
+    maven { url "http://repo.spring.io/libs-snapshot" }
 }

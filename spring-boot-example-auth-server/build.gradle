@@ -1,8 +1,5 @@
 description = 'Spring Boot examples OAuth Server'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-
 dependencies {
     compile project(':spring-boot-example-service')
     compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '1.5.3.RELEASE'
@@ -17,4 +14,23 @@ dependencies {
     testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: '1.5.3.RELEASE') {
         exclude(module: 'commons-logging')
     }
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+}
+
+buildscript {
+    ext.kotlin_version = '1.1.2-5'
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'kotlin'
+
+repositories {
+    mavenLocal()
+    jcenter()
+    maven { url "http://repo.spring.io/libs-snapshot" }
 }

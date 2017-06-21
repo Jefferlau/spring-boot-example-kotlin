@@ -1,14 +1,15 @@
 rootProject.name = 'spring-boot-example'
+
 include ':spring-boot-example-core'
 include ':spring-boot-example-dao'
 include ':spring-boot-example-service'
 include ':spring-boot-example-web'
-include ':spring-boot-example-scheduler'
-include ':spring-boot-example-auth-server'
+//include ':spring-boot-example-scheduler'
+//include ':spring-boot-example-auth-server'
 
 project(':spring-boot-example-core').projectDir = "$rootDir/spring-boot-example-core" as File
 project(':spring-boot-example-dao').projectDir = "$rootDir/spring-boot-example-dao" as File
 project(':spring-boot-example-service').projectDir = "$rootDir/spring-boot-example-service" as File
 project(':spring-boot-example-web').projectDir = "$rootDir/spring-boot-example-web" as File
-project(':spring-boot-example-scheduler').projectDir = "$rootDir/spring-boot-example-scheduler" as File
-project(':spring-boot-example-auth-server').projectDir = "$rootDir/spring-boot-example-auth-server" as File
+//project(':spring-boot-example-scheduler').projectDir = "$rootDir/spring-boot-example-scheduler" as File
+//project(':spring-boot-example-auth-server').projectDir = "$rootDir/spring-boot-example-auth-server" as File
