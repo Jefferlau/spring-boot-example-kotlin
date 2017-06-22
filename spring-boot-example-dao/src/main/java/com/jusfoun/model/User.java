@@ -1,5 +1,7 @@
 package com.jusfoun.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -26,6 +28,7 @@ public class User implements Serializable {
      *
      * @mbggenerated Wed May 24 10:09:48 CST 2017
      */
+    @JsonIgnore
     private String password;
 
     /**
