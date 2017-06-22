@@ -30,7 +30,7 @@ class MyInterceptor : HandlerInterceptor {
     }
 
     @Throws(Exception::class)
-    override fun afterCompletion(httpServletRequest: HttpServletRequest, httpServletResponse: HttpServletResponse, o: Any, e: Exception) {
+    override fun afterCompletion(httpServletRequest: HttpServletRequest, httpServletResponse: HttpServletResponse, o: Any, e: Exception?) {
         if (logger.isInfoEnabled) {
             logger.info("--- after DispatcherServlet ---")
         }
