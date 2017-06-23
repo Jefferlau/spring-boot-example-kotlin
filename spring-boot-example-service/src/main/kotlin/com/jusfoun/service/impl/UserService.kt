@@ -16,7 +16,7 @@ open class UserService : BaseService<UserMapper, User, UserExample>() {
     fun findByUsername(username: String): User? {
         val example = UserExample()
         example.createCriteria().andUsernameEqualTo(username)
-        val userList = mapper.selectByExample(example)
+        val userList = mapper!!.selectByExample(example)
 
         return if (userList.size > 0) userList[0] else null
     }

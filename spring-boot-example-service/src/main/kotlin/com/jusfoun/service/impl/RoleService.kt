@@ -14,5 +14,5 @@ import org.springframework.stereotype.Service
 @Service
 open class RoleService : BaseService<RoleMapper, Role, RoleExample>() {
 
-    fun selectRoleExtensionByUserId(id: String) = mapper.selectRoleExtensionByUserId(id)
+    fun selectRoleExtensionByUserId(id: String) = mapper!!.selectRoleExtensionByUserId(id)
 }

@@ -43,4 +43,10 @@ public class UserServiceTests {
         System.out.println(u);
     }
 
+    @Test
+    public void findByUsername() {
+        User user = userService.findByUsername("J");
+        System.out.println(user);
+    }
+
 }
